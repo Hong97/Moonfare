@@ -1,69 +1,93 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import c1 from '../assets/img/commitee/1.jpg'
+import c2 from '../assets/img/commitee/2.png'
+import c3 from '../assets/img/commitee/3.png'
+import c4 from '../assets/img/commitee/4.png'
+import c5 from '../assets/img/commitee/5.png'
+import c7 from '../assets/img/commitee/7.png'
+import t1 from '../assets/img/team/t1.png'
+import t2 from '../assets/img/team/t2.png'
+import t3 from '../assets/img/team/t3.png'
+import t4 from '../assets/img/team/t4.png'
+import t5 from '../assets/img/team/t5.png'
+import t6 from '../assets/img/team/t6.png'
 
 const committeeMembers = [
   {
-    name: 'Steffen Pauls',
-    role: 'Founder & CEO',
-    prev: 'KKR, Goldman Sachs',
-    img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face',
+    name: 'Richard Ashford',
+    role: 'Founder & Chairman',
+    prev: 'Blackstone, Goldman Sachs',
+    img: c1,
   },
   {
-    name: 'Lorenz Jüngling',
+    name: 'Jonathan Mercer',
+    role: 'Chief Executive Officer',
+    prev: 'KKR, Morgan Stanley',
+    img: c2,
+  },
+  {
+    name: 'Evelyn Hartley',
     role: 'Chief Investment Officer',
-    prev: 'McKinsey, UBS',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+    prev: 'Carlyle Group, UBS',
+    img: c3,
   },
   {
-    name: 'Alexandra Ivanova',
-    role: 'Head of Fund Selection',
-    prev: 'Advent International',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Marcus Weber',
-    role: 'Managing Director',
+    name: 'Sebastian Voss',
+    role: 'Managing Director, Capital Markets',
     prev: 'Permira, Deutsche Bank',
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+    img: c4,
   },
   {
-    name: 'Sophie Chen',
-    role: 'General Counsel',
-    prev: 'Clifford Chance, Blackstone',
-    img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face',
+    name: 'Natalie Wren',
+    role: 'Head of Secondary Markets',
+    prev: 'Advent International, Lazard',
+    img: c5,
+  },
+  {
+    name: 'Marcus Elliot',
+    role: 'General Counsel & Compliance',
+    prev: 'Clifford Chance, Apollo',
+    img: c7,
   },
 ]
 
 const teamMembers = [
   {
-    name: 'Felix Hartmann',
-    role: 'VP, Fund Research',
-    prev: 'Carlyle Group',
-    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face',
+    name: 'Daniel Croft',
+    role: 'VP, Blue-Chip Research',
+    prev: 'JP Morgan, Fidelity',
+    img: t1,
   },
   {
-    name: 'Julia Schneider',
-    role: 'Investment Analyst',
-    prev: 'EQT, Roland Berger',
-    img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+    name: 'Sophia Liang',
+    role: 'Senior Investment Analyst',
+    prev: 'CVC Capital, McKinsey',
+    img: t3,
   },
   {
-    name: 'Thomas Müller',
-    role: 'Portfolio Manager',
-    prev: 'Warburg Pincus',
-    img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face',
+    name: 'Brendan Walsh',
+    role: 'Portfolio Risk Manager',
+    prev: 'Warburg Pincus, Deloitte',
+    img: t2,
   },
   {
-    name: 'Emma Laurent',
-    role: 'Senior Analyst',
-    prev: 'BNP Paribas, CVC',
-    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face',
+    name: 'Isabelle Fontaine',
+    role: 'Partner Relations Lead',
+    prev: 'BNP Paribas, Rothschild',
+    img: t5,
   },
   {
-    name: 'David Kim',
+    name: 'Owen Tanner',
     role: 'VP, Investor Relations',
-    prev: 'JP Morgan, TPG',
-    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face',
+    prev: 'TPG Capital, Credit Suisse',
+    img: t4,
+  },
+  {
+    name: 'Priya Nair',
+    role: 'Business Intelligence Analyst',
+    prev: 'EY-Parthenon, Temasek',
+    img: t6,
   },
 ]
 
@@ -93,7 +117,7 @@ export default function Team() {
   const members = activeTab === 'committee' ? committeeMembers : teamMembers
 
   return (
-    <section className="bg-white py-28 lg:py-36 overflow-hidden">
+    <section className="bg-white py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={ref} className="mb-12">
@@ -141,7 +165,7 @@ export default function Team() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? 'bg-blue-600 text-white shadow-md'
+                      ? 'bg-blue-600  shadow-md'
                       : 'text-gray-500 hover:text-gray-900'
                   }`}
                 >
@@ -154,13 +178,13 @@ export default function Team() {
 
         {/* Scrollable cards */}
 
-        <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide">
+        <div style={{ overflowX: 'auto' }} className="pb-4">
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="flex gap-5"
+            style={{ display: 'flex', gap: '1.25rem', width: 'max-content' }}
           >
             {members.map((member) => (
               <MemberCard key={member.name} member={member} />
