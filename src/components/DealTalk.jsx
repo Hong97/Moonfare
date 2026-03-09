@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { FiPlay } from 'react-icons/fi'
 
+import dealBg from '../assets/img/deal.png'
+
 const episodes = [
   {
     number: 'EP. 12',
@@ -79,43 +81,45 @@ export default function DealTalk() {
   return (
     <section className="bg-gray-50 py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Hero banner — kept dark because it has a real photo background */}
+        {/* Hero banner — white card, text left + image right */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           ref={ref}
-          className="relative rounded-3xl overflow-hidden mb-16"
-          style={{ minHeight: 360 }}
+          className="rounded-3xl overflow-hidden border border-gray-200 bg-white mb-16 flex flex-col sm:flex-row"
         >
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&h=600&fit=crop"
-            alt="Deal Talk"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060B18] via-[#060B18]/80 to-transparent" />
-          <div className="relative z-10 p-12 lg:p-16 flex flex-col justify-center h-full min-h-[360px]">
-            <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4 block">
-              Moonfare Originals
+          {/* Text side */}
+          <div className="flex-1 p-10 lg:p-12 flex flex-col justify-center">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3 block">
+              BILLIONS TREE INSIGHTS
             </span>
             <h2
-              className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight"
+              className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight"
               style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
             >
-              Deal Talk
+              The Business of Investing
             </h2>
-            <p className="text-slate-300 text-lg max-w-lg leading-relaxed mb-8">
-              In-depth conversations with private markets luminaries — GPs, LPs,
-              and allocators sharing unfiltered insights on deals, strategy, and the future of the asset class.
+            <p className="text-gray-500 text-base leading-relaxed mb-6 max-w-sm">
+              Exclusive intelligence for the sophisticated partner. We deconstruct market cycles and examine the underlying commercial DNA of global blue-chip leaders to ensure disciplined capital growth.
             </p>
-            <button className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors w-fit">
-              <FiPlay size={16} />
-              Watch latest episode
+            <button className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors w-fit group">
+              Learn more <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </button>
+          </div>
+
+          {/* Image side */}
+          <div className=" shrink-0">
+            <img
+              src={dealBg}
+              alt="Deal Talk"
+              className="w-full h-full object-cover"
+              style={{ minHeight: 240 }}
+            />
           </div>
         </motion.div>
 
         {/* Episodes grid */}
-        <div className="flex items-center justify-between mb-8">
+        {/* <div className="flex items-center justify-between mb-8">
           <h3 className="text-2xl font-bold text-gray-900">Recent episodes</h3>
           <button className="text-blue-600 hover:text-blue-700 text-sm font-semibold flex items-center gap-1 transition-colors">
             View all episodes →
@@ -126,7 +130,7 @@ export default function DealTalk() {
           {episodes.map((ep, i) => (
             <EpisodeCard key={ep.number} ep={ep} index={i} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

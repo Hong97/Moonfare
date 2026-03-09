@@ -102,27 +102,35 @@ export default function Team() {
             animate={inView ? { opacity: 1 } : {}}
             className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-4 block"
           >
-            Our people
+            THE ARCHITECTS OF CAPITAL
           </motion.span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-              style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
-            >
-              The team behind
-              <br />
-              the selection
-            </motion.h2>
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.1 }}
+                className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-lg mb-4"
+                style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
+              >
+                Uniting Industrial Wisdom with Financial Precision
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 }}
+                className="text-gray-500 text-lg leading-relaxed max-w-lg"
+              >
+                Our core leadership combines decades of hands-on business execution with rigorous secondary market mastery to safeguard your growth.
+              </motion.p>
+            </div>
 
             {/* Tabs */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.2 }}
-              className="flex gap-1 bg-gray-100 rounded-xl p-1 border border-gray-200 h-fit"
+              className="flex gap-1 bg-gray-100 rounded-xl p-1 border border-gray-200 h-fit shrink-0"
             >
               {[
                 { id: 'committee', label: 'Investment Committee' },
@@ -145,6 +153,7 @@ export default function Team() {
         </div>
 
         {/* Scrollable cards */}
+
         <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide">
           <motion.div
             key={activeTab}

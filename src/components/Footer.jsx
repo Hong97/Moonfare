@@ -1,37 +1,33 @@
 import { FiTwitter, FiLinkedin, FiInstagram, FiYoutube } from 'react-icons/fi'
+import logoIcon from '../assets/img/icon.png'
 
 const footerLinks = {
   Invest: [
-    'Direct Funds',
-    'Portfolio of Funds',
-    'Co-investments',
-    'Semi-liquid',
-    'Secondaries',
-    'Secondary Market',
+    'Private Equity',
+    'Blue-Chip Alpha',
+    'Business-Owner Strategy',
+    'Secondary Excellence',
+    'Bespoke Portfolios',
   ],
-  Learn: [
-    'Academy',
-    'Deal Talk',
-    'Research & Insights',
-    'Private Equity Guide',
-    'Venture Capital Guide',
-    'Events',
+  Insights: [
+    'Market Analysis',
+    'Quarterly Briefings',
+    'The "Heartbeat" Series',
+    'Partner Letters',
   ],
-  Company: [
-    'About Us',
-    'Team',
-    'Careers',
-    'Press',
-    'Partners',
-    'Contact',
+  Firm: [
+    'Our Philosophy',
+    'Leadership',
+    'Governance',
+    'Contact Office',
   ],
 }
 
 const socials = [
   { Icon: FiLinkedin, label: 'LinkedIn' },
-  { Icon: FiTwitter, label: 'Twitter' },
-  { Icon: FiInstagram, label: 'Instagram' },
-  { Icon: FiYoutube, label: 'YouTube' },
+  // { Icon: FiTwitter, label: 'Twitter' },
+  // { Icon: FiInstagram, label: 'Instagram' },
+  // { Icon: FiYoutube, label: 'YouTube' },
 ]
 
 const legalLinks = ['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'Imprint', 'Regulatory Disclosures']
@@ -44,15 +40,12 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="text-gray-900 font-semibold text-xl tracking-tight">moonfare</span>
+            <div className="flex items-center gap-3 mb-5">
+              <img src={logoIcon} alt="logo" className="h-9 w-auto object-contain" />
+              <span className="text-gray-900 font-semibold text-base leading-tight">BILLIONS TREE CAPITAL</span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">
-              Moonfare is the leading digital platform for private market investments, giving
-              qualified investors access to institutional-grade funds from the world's top managers.
+              BILLIONS TREE CAPITAL is a premier private investment firm dedicated to long-term value creation in global secondary markets. We combine industrial insight with financial rigor to manage high-conviction blue-chip portfolios for our invited partners.
             </p>
             {/* Social links */}
             <div className="flex gap-3">
@@ -92,22 +85,15 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="py-8 border-t border-gray-200">
           <p className="text-gray-400 text-xs leading-relaxed mb-4">
-            <strong className="text-gray-500">Important Notice:</strong> The information on this website is for informational
-            purposes only and does not constitute investment advice, a solicitation, or an offer to buy or sell any
-            security. Private market investments are speculative and involve a high degree of risk. Past performance
-            is not indicative of future results. Moonfare GmbH is authorized and regulated by the Federal Financial
-            Supervisory Authority (BaFin) in Germany. Investments in private equity funds are suitable only for
-            professionally experienced investors and qualified private investors within the meaning of applicable law.
+            <strong className="text-gray-500">Important Notice:</strong> This website is for informational purposes only and is intended solely for invited partners and professional investors. Access to the Billions Tree Capital portal requires a valid invitation. Past performance is not indicative of future results.
           </p>
-          <p className="text-gray-400 text-xs">
-            Moonfare is registered in Germany under HRB 196291 B. Registered office: Luisenstraße 1, 10117 Berlin, Germany.
-          </p>
+  
         </div>
 
         {/* Bottom bar */}
         <div className="py-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-xs">
-            © {new Date().getFullYear()} Moonfare GmbH. All rights reserved.
+            © {new Date().getFullYear()} Billions Tree Capital. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {legalLinks.map((link) => (

@@ -1,16 +1,12 @@
 import { motion } from 'framer-motion'
+import heroBg from '../assets/img/hero.png'
 
 // Partner logos — text-based to match the screenshot style
 const partners = [
-  'WARBURG PINCUS',
-  'Lexington',
-  'Oakley Capital',
-  'CLEARLAKE',
-  'AEW',
-  'Lightspeed',
-  'GENERAL CATALYST',
-  'PRESIDIO',
-  'LMP',
+  'CONSUMER LOGISTICS',
+  'TECH GIANTS',
+  'FINANCIAL MOATS',
+  'ENERGY LEADERS'
 ]
 
 function PartnerLogos() {
@@ -56,7 +52,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="hero-bg-animate absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&h=1080&fit=crop&q=90"
+            src={heroBg}
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover object-center"
@@ -97,9 +93,9 @@ export default function Hero() {
             className="font-serif-display text-white leading-[1.1] tracking-tight mb-6 max-w-2xl"
             style={{ fontFamily: '"DM Serif Display", Georgia, serif', fontSize: 'clamp(2.75rem, 6vw, 5rem)' }}
           >
-            Private markets. Only
+            The Art of Selection. Only
             <br />
-            the exceptional.
+            The Discipline of Value.
           </motion.h1>
 
           {/* Subheadline */}
@@ -110,8 +106,9 @@ export default function Hero() {
             className="text-white/70 text-base md:text-[17px] max-w-md leading-relaxed mb-10"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Access highly sought-after private market investments and hidden gems,
-            hard to find elsewhere.
+            Bespoke secondary market strategies for blue-chip excellence. 
+            <br />
+            We don't just trade; we own great businesses.
           </motion.p>
 
           {/* CTA button */}
@@ -124,7 +121,7 @@ export default function Hero() {
               className="bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-[15px]"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
-              Start investing
+             Enter with Invitation
             </button>
           </motion.div>
         </div>

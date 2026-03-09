@@ -1,52 +1,54 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import {
-  FiFilter, FiAward, FiUser, FiMonitor, FiUsers, FiShuffle,
-} from 'react-icons/fi'
+import img6 from '../assets/img/Group 6.png'
+import img7 from '../assets/img/Group 7.png'
+import img8 from '../assets/img/Group 9.png'
+import img9 from '../assets/img/Group 10.png'
+import img10 from '../assets/img/Group 11.png'
+import img11 from '../assets/img/Group 12.png'
 
 const features = [
   {
-    icon: FiFilter,
-    title: 'Hyper-selected funds',
+    img: img6,
+    title: 'High-Conviction Research',
     description:
-      'We review thousands of funds annually and hand-pick only 20–30, so every option on our platform has passed our rigorous due diligence.',
+      'We bypass the noise. Our committee conducts rigorous, PE-style due diligence on secondary market leaders, selecting only the most resilient businesses with unassailable moats.',
   },
   {
-    icon: FiAward,
-    title: 'Decades of expertise',
+    img: img7,
+    title: 'Industrial-Financial Synergy',
     description:
-      'Our investment committee combines deep private markets experience from leading institutional investors, asset managers, and family offices.',
+      "Led by experts with deep roots in both industrial operations and financial architecture, we decode the 'Heartbeat' of every business we invest in.",
   },
   {
-    icon: FiUser,
-    title: 'Dedicated relationship manager',
+    img: img8,
+    title: 'Private Partner Ecosystem',
     description:
-      'Every member gets a dedicated point of contact to guide them through the investment process and answer questions at any stage.',
+      'Our partners are more than clients. You gain direct access to our core investment insights and a bespoke support structure tailored to institutional-grade needs.',
   },
   {
-    icon: FiMonitor,
-    title: 'Fully digital',
+    img: img9,
+    title: 'Systematic Execution',
     description:
-      'From onboarding to portfolio tracking, the entire Moonfare experience is seamlessly digital — invest in minutes, monitor anytime.',
+      'We bridge the gap between physical business value and digital market liquidity. Our proprietary systems ensure disciplined execution and risk management at every stage.',
   },
   {
-    icon: FiUsers,
-    title: 'Engaged community',
+    img: img10,
+    title: 'The Inner Circle',
     description:
-      'Join 75,000+ sophisticated investors sharing insights, attending exclusive events, and building wealth in private markets together.',
+      'Strictly invitation-only. We maintain a curated network of sophisticated capital owners who share our commitment to fundamental value and long-term stewardship.',
   },
   {
-    icon: FiShuffle,
-    title: 'Secondary market flexibility',
+    img: img11,
+    title: 'Strategic Capital Agility',
     description:
-      "Access Moonfare's secondary market to buy or sell fund positions before the end of a fund's life, providing rare liquidity in private markets.",
+      'We expertly navigate secondary market cycles, identifying optimal entry points in premium blue-chip assets to protect and grow your capital across generations.',
   },
 ]
 
 function FeatureCard({ feature, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
-  const Icon = feature.icon
 
   return (
     <motion.div
@@ -56,8 +58,8 @@ function FeatureCard({ feature, index }) {
       transition={{ delay: index * 0.08, duration: 0.55 }}
       className="group p-7 rounded-2xl border border-gray-200 bg-white hover:shadow-md hover:border-gray-300 transition-all duration-300"
     >
-      <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-        <Icon size={20} className="text-blue-600" />
+      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+        <img src={feature.img} alt={feature.title} className="w-14 h-14 object-contain" />
       </div>
       <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
@@ -79,7 +81,7 @@ export default function WhyMoonfare() {
             animate={inView ? { opacity: 1 } : {}}
             className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-4 block"
           >
-            Why Moonfare
+            WHY BILLIONS TREE CAPITAL
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -88,9 +90,9 @@ export default function WhyMoonfare() {
             className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
             style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
           >
-            Built differently
+            Personal, Professional and 
             <br />
-            for serious investors
+            Primed for Excellence.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -98,14 +100,19 @@ export default function WhyMoonfare() {
             transition={{ delay: 0.2 }}
             className="text-gray-500 text-lg leading-relaxed"
           >
-            Moonfare combines institutional-grade access, rigorous due diligence, and
-            a seamless digital experience — so you can invest with the same advantages
-            as the world's best-endowed institutions.
+            We manage capital with the precision of a business owner. By focusing on elite blue-chip assets and long-term secondary market strategies, we provide our invited partners with a stable, high-conviction environment for wealth compounding.
           </motion.p>
         </div>
 
-        {/* Feature grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Feature grid — horizontal scroll on mobile, grid on sm+ */}
+        <div className="sm:hidden flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide">
+          {features.map((feature, i) => (
+            <div key={feature.title} className="w-72 shrink-0">
+              <FeatureCard feature={feature} index={i} />
+            </div>
+          ))}
+        </div>
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, i) => (
             <FeatureCard key={feature.title} feature={feature} index={i} />
           ))}

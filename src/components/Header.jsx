@@ -47,13 +47,13 @@ export default function Header() {
                 className={`text-2xl leading-none transition-colors ${isLight ? 'text-gray-900' : 'text-white'}`}
                 style={{ fontFamily: '"DM Serif Display", Georgia, serif', fontStyle: 'italic' }}
               >
-                M
+                B
               </span>
               <span
                 className={`text-xl font-medium tracking-tight leading-none transition-colors ${isLight ? 'text-gray-900' : 'text-white'}`}
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                oonfare
+                ILLIONS TREE CAPITAL
               </span>
             </a>
 

@@ -1,59 +1,52 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FiTrendingUp, FiLayers, FiZap, FiDroplet, FiRepeat } from 'react-icons/fi'
+import img1 from '../assets/img/Group 2.png'
+import img2 from '../assets/img/Group 3.png'
+import img3 from '../assets/img/Group 5.png'
+import img4 from '../assets/img/Group 1.png'
+import img5 from '../assets/img/Group 4.png'
 
 const products = [
   {
-    icon: FiTrendingUp,
-    title: 'Direct Funds',
+    img: img1,
+    title: 'Private Equity Mindset',
     description:
-      "Gain direct exposure to top-tier private equity, venture capital, and growth equity funds managed by the world's leading GPs.",
-    minimum: '€100,000',
-    tag: 'Most popular',
-    color: 'from-blue-500 to-blue-600',
+      'Applying rigorous private equity due diligence standards to public markets to uncover long-term intrinsic value.',
+    tag: 'Exclusive Tier',
   },
   {
-    icon: FiLayers,
-    title: 'Portfolio of Funds',
+    img: img2,
+    title: 'Blue-Chip Alpha',
     description:
-      'Build instant diversification across multiple managers, vintages, and strategies with a single allocation.',
-    minimum: '€50,000',
-    tag: null,
-    color: 'from-indigo-500 to-purple-600',
+      'Targeted allocation into global industry leaders with resilient cash flows and unassailable competitive advantages.',
+    tag: 'Access via Invitation Only',
   },
   {
-    icon: FiZap,
-    title: 'Co-investments',
+    img: img3,
+    title: 'Secondary Market Excellence',
     description:
-      'Invest alongside leading GPs in specific deals with no management fees or carried interest on co-investment capital.',
-    minimum: '€50,000',
-    tag: 'Fee-efficient',
-    color: 'from-amber-500 to-orange-600',
+      'Proprietary models designed to navigate market volatility, capturing value in secondary markets through disciplined execution.',
+    tag: 'Restricted Access',
   },
   {
-    icon: FiDroplet,
-    title: 'Semi-liquid',
+    img: img4,
+    title: 'Business-Owner Strategy',
     description:
-      'Access private market returns with quarterly liquidity windows — a bridge between private and liquid alternatives.',
-    minimum: '€25,000',
-    tag: 'Quarterly liquidity',
-    color: 'from-teal-500 to-cyan-600',
+      'We treat equity as business ownership. Deep-dive fundamental analysis into the underlying commercial systems of every position.',
+    tag: 'Authorized Partners Only',
   },
   {
-    icon: FiRepeat,
-    title: 'Secondaries',
+    img: img5,
+    title: 'Bespoke Portfolios',
     description:
-      'Acquire stakes in existing private equity funds at potentially discounted valuations with shorter duration.',
-    minimum: '€25,000',
-    tag: 'Discounted entry',
-    color: 'from-rose-500 to-pink-600',
+      'Tailored investment solutions designed for institutional-grade requirements and sophisticated private partners.',
+    tag: 'Inquiry Required',
   },
 ]
 
 function ProductCard({ product, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
-  const Icon = product.icon
 
   return (
     <motion.div
@@ -63,27 +56,15 @@ function ProductCard({ product, index }) {
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className="relative rounded-2xl border border-gray-200 bg-white p-7 flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/50 cursor-pointer"
     >
-      {product.tag && (
-        <span className="absolute top-4 right-4 text-xs font-semibold text-gray-600 bg-gray-100 border border-gray-200 rounded-full px-3 py-1">
-          {product.tag}
-        </span>
-      )}
-
-      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${product.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-        <Icon size={22} className="text-white" />
+      <div className="w-14 h-14 rounded-full  flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <img src={product.img} alt={product.title} className="w-14 h-14 object-contain" />
       </div>
 
       <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed flex-1">{product.description}</p>
 
-      <div className="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
-        <div>
-          <span className="text-xs text-gray-400 uppercase tracking-wide">Minimum</span>
-          <div className="text-gray-900 font-semibold text-base mt-0.5">{product.minimum}</div>
-        </div>
-        <button className="text-blue-600 hover:text-blue-700 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-          Learn more <span>→</span>
-        </button>
+      <div className="mt-6 pt-5 border-t border-gray-100">
+        <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">{product.tag}</span>
       </div>
     </motion.div>
   )
@@ -103,7 +84,7 @@ export default function ProductOffering() {
             animate={inView ? { opacity: 1 } : {}}
             className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-4 block"
           >
-            Product offering
+           INVESTMENT STRATEGIES
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -112,9 +93,10 @@ export default function ProductOffering() {
             className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
             style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
           >
-            One platform,
+            One Vision,
+
             <br />
-            every strategy
+            Exceptional Assets,
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -122,13 +104,19 @@ export default function ProductOffering() {
             transition={{ delay: 0.2 }}
             className="text-gray-500 text-lg leading-relaxed"
           >
-            Whether you're building a diversified private markets portfolio or targeting a specific
-            strategy, Moonfare gives you the tools and access to invest with confidence.
+            Whether identifying defensive moats in blue-chip leaders or executing high-conviction secondary market plays, our strategies are built for capital preservation and sustainable growth.
           </motion.p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Cards grid — horizontal scroll on mobile, grid on sm+ */}
+        <div className="sm:hidden flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide">
+          {products.map((product, i) => (
+            <div key={product.title} className="w-72 shrink-0">
+              <ProductCard product={product} index={i} />
+            </div>
+          ))}
+        </div>
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {products.map((product, i) => (
             <ProductCard key={product.title} product={product} index={i} />
           ))}

@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { FiArrowRight } from 'react-icons/fi'
 
+import footerBg from '../assets/img/footer.png'
+
 export default function Community() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
@@ -11,7 +13,7 @@ export default function Community() {
       {/* Background */}
       <div className="relative min-h-[600px] flex items-center">
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&h=700&fit=crop"
+          src={footerBg}
           alt="Mountain landscape"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -60,9 +62,10 @@ export default function Community() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-6"
             >
-              Be part of the future
+              The Future of Value
+
               <br />
-              of Private Equity
+              Curated for the Elite
             </motion.h2>
 
             <motion.p
@@ -71,9 +74,7 @@ export default function Community() {
               transition={{ delay: 0.35, duration: 0.7 }}
               className="text-slate-300 text-lg leading-relaxed mb-10 max-w-xl"
             >
-              Join a global community of sophisticated investors who are reshaping how private
-              markets capital is deployed — with access, insight, and transparency that was
-              unimaginable a decade ago.
+              Join an exclusive circle of sophisticated capital owners, institutional veterans, and visionary entrepreneurs—shared in pursuit of exceptional blue-chip growth.
             </motion.p>
 
             <motion.div
@@ -83,12 +84,12 @@ export default function Community() {
               className="flex flex-wrap gap-4"
             >
               <button className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-0.5 text-base">
-                Join now
+                Secure Your Access
                 <FiArrowRight />
               </button>
-              <button className="border border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base">
+              {/* <button className="border border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base">
                 Learn more
-              </button>
+              </button> */}
             </motion.div>
           </div>
         </div>

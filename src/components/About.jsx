@@ -36,7 +36,7 @@ export default function About() {
   return (
     <section id="about" className="bg-gray-50 py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid  gap-16 lg:gap-24 items-start">
           {/* Left column */}
           <div ref={ref}>
             <motion.div
@@ -45,25 +45,24 @@ export default function About() {
               transition={{ duration: 0.7 }}
             >
               <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-4 block">
-                Our approach
+                OUR PHILOSOPHY
               </span>
               <h2
                 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
                 style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
               >
-                Beyond the obvious
+                Investing in Great Businesses,
                 <br />
-                in private markets
+                 Not Just Tickers
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                We don't just open a door to private markets — we select what's worth walking through.
-                Our investment committee reviews thousands of funds each year, choosing only the 20–30
-                that meet our exacting standards for quality, risk-adjusted returns, and manager track records.
-              </p>
-              <p className="text-gray-500 text-lg leading-relaxed mb-10">
-                From global buyout leaders to high-growth venture strategies, every fund on our platform
-                has been rigorously evaluated so you don't have to start from scratch.
-              </p>
+              <div className="grid sm:grid-cols-2 gap-6 mb-10">
+                <p className="text-gray-500 text-lg leading-relaxed">
+                  We do not chase market volatility. We view each blue-chip stock as a living, breathing business. Our investment committee conducts exhaustive fundamental analysis to identify companies with unassailable moats and sustainable cash flows.
+                </p>
+                <p className="text-gray-500 text-lg leading-relaxed">
+                  Access to our inner circle is strictly by invitation. We curate a community of sophisticated partners who prioritize long-term capital preservation and compounding over market noise.
+                </p>
+              </div>
               <button className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-base transition-colors group">
                 Learn about our process
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -72,11 +71,11 @@ export default function About() {
           </div>
 
           {/* Right column - Stats grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {stats.map((stat, i) => (
               <StatCard key={i} {...stat} index={i} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
